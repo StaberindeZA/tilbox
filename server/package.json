@@ -1,0 +1,32 @@
+{
+  "devDependencies": {
+    "@types/hapi__hapi": "^20.0.12",
+    "@types/node": "^14.11.2",
+    "@types/uuid": "^8.3.4",
+    "gts": "^3.1.0",
+    "nodemon": "^2.0.19",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^4.0.3"
+  },
+  "scripts": {
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint",
+    "start": "node ./build/src/index.js",
+    "dev:tsc": "tsc --watch -p .",
+    "dev:serve": "nodemon -e js -w build build/src/index.js",
+    "dev": "run-p dev:*"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^20.2.2",
+    "joi": "^17.6.0",
+    "uuid": "^8.3.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
